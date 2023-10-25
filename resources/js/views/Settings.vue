@@ -19,15 +19,15 @@
       </template>
       <!-- Update Button -->
       <div class="flex items-center" v-if="authorizations.authorizedToUpdate">
-        <LoadingButton
+        <Button
           dusk="update-button"
           type="submit"
           class="ml-auto"
           :disabled="isUpdating"
-          :processing="isUpdating"
+          :loading="isUpdating"
+          :label="__('novaSettings.saveButtonText')"
         >
-          {{ __('novaSettings.saveButtonText') }}
-        </LoadingButton>
+        </Button>
       </div>
     </form>
 
@@ -43,8 +43,13 @@
 
 <script>
 import { Errors } from 'laravel-nova';
+import { Button } from 'laravel-nova-ui';
 
 export default {
+  components: {
+    Button
+  },
+
   data() {
     return {
       pageId: false,

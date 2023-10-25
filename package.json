@@ -25,6 +25,7 @@
     "vuex": "^4.0.2"
   },
   "dependencies": {
+    "laravel-nova-ui": "^0.4.7",
     "vue": "^3.2.37"
   }
 }
